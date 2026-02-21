@@ -1,6 +1,7 @@
 # coffeshop erd
  
-```erDiagram
+```mermaid
+erDiagram
     users {
         serial id PK
         varchar fullname
@@ -43,11 +44,6 @@
         serial id PK
         int product_id FK
         varchar name
-    }
-
-    product_prices {
-        serial id PK
-        int size_id FK
         int price
     }
 
@@ -57,8 +53,9 @@
         text image_url
     }
 
-    product_variant {
+    product_variants {
         serial id PK
+        int product_id FK
         varchar name
         int price
         timestamp created_at
@@ -86,46 +83,48 @@
 
     orders {
         uuid id PK
+        int user_id FK
+        int coupon_id FK
         varchar shipping
         int total_price
         int tax
-        int coupon_id FK
         varchar status
         timestamp created_at
         timestamp updated_at
         timestamp deleted_at
-        int user_id FK
     }
 
-    detail_order {
+    order_details {
         serial id PK
+        uuid order_id FK
+        int product_id FK
+        int product_size_id FK
+        int product_variant_id FK
         int qty
         int price
         int subtotal
         timestamp created_at
-        uuid order_id FK
-        int product_id FK
-        int product_size_id FK
-        int product_type_id FK
     }
 
     payments {
         serial id PK
-        varchar name
         uuid order_id FK
+        varchar name
         timestamp created_at
         timestamp updated_at
         timestamp deleted_at
     }
-```
-    product_categories ||--o{ products : "has many"
-    products ||--o{ product_sizes : "has many"
-    products ||--o{ product_images : "has many"
-    product_sizes ||--o{ product_prices : "has many"
+
+    %% Relationships
+    product_categories ||--o{ products : "has"
+    products ||--o{ product_sizes : "has"
+    products ||--o{ product_images : "has"
+    products ||--o{ product_variants : "has"
     users ||--o{ orders : "places"
-    coupons ||--o{ orders : "applied to"
-    orders ||--o{ detail_order : "contains"
+    coupons ||--o{ orders : "used in"
+    orders ||--o{ order_details : "contains"
     orders ||--o{ payments : "has"
-    products ||--o{ detail_order : "ordered in"
-    product_sizes ||--o{ detail_order : "selected in"
-    product_variant ||--o{ detail_order : "chosen in"
+    products ||--o{ order_details : "in"
+    product_sizes ||--o{ order_details : "selected"
+    product_variants ||--o{ order_details : "chosen"
+```
