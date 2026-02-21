@@ -85,7 +85,7 @@ erDiagram
         uuid id PK
         int user_id FK
         int coupon_id FK
-        varchar shipping
+        int delivery_id FK
         int total_price
         int tax
         varchar status
@@ -115,7 +115,11 @@ erDiagram
         timestamp deleted_at
     }
 
-    %% Relationships
+    delivery_method {
+        serial id pk
+        varchar name
+    }
+
     product_categories ||--o{ products : "has"
     products ||--o{ product_sizes : "has"
     products ||--o{ product_images : "has"
@@ -127,4 +131,5 @@ erDiagram
     products ||--o{ order_details : "in"
     product_sizes ||--o{ order_details : "selected"
     product_variants ||--o{ order_details : "chosen"
+    delivery_method ||--o{ orders : delivery
 ```
