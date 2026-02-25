@@ -67,6 +67,10 @@ INSERT INTO "products" ("name", "description", "price") VALUES
 ('Mango Smoothie', 'Sweet tropical mango smoothie with milk.', 30000),
 ('Avocado Smoothie', 'Creamy avocado drink with milk and chocolate topping.', 32000);
 
+
+UPDATE products SET is_flash_sale = true WHERE id IN (1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+UPDATE products SET is_buy1get1 = true WHERE id IN (11, 12, 13, 14, 15, 16, 17, 18, 19, 20);
+UPDATE products SET is_birthday_package = true WHERE id IN (21, 22, 23, 24, 25, 26, 27, 28, 29, 30);
 -- select * from "products"
 -- 50 products (name, description, price)
 
