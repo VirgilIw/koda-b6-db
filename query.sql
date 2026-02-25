@@ -28,19 +28,19 @@ order by
   --  SUBTOTAL DARI SETIAP PRODUCT YANG DIPILIH, dan kuantitas
   -- nomor 2
 select
-"products"."id",
-"products"."price",
-c.qty,
-"products"."name"
-from "products"
+    "p"."id",
+    "p"."price",
+    "c"."qty",
+    "p"."name",
+    "p"."price" * "c"."qty" as "subtotal"
+from "products" as "p"
 join (
-    select 5 as id, 2 as qty
+    select 5 as "id", 2 as "qty"
     union all
     select 8, 4
     union all
     select 10, 5
-) as c
-on c.id = "products"."id";
+) as "c" on "c"."id" = "p"."id";
 
 -- nomor 3
 select
