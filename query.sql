@@ -30,31 +30,14 @@ order by
 select
 "products"."id",
 "products"."price",
-"products"."name",
-(
-    select c."qty"
-    from (
-        values
-        (5,2),
-        (8,4),
-        (10,5)
-    ) as c(id, qty)
-    where c.id = "products"."id"
-) as "qty",
-"products"."price" *
-(
-    select c."qty"
-    from (
-        values
-        (5,2),
-        (8,4),
-        (10,5)
-    ) as c(id, qty)
-    where c.id = "products"."id"
-) as "subtotal"
+c.qty,
+"products"."name"
 from "products"
-where "products"."id" in (
-    select id
-    from products
-    where id in (5,8,10)
-);
+join (
+    select 5 as id, 2 as qty
+    union all
+    select 8, 4
+    union all
+    select 10, 5
+) as c
+on c.id = "products"."id";;
