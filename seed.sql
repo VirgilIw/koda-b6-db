@@ -1,3 +1,16 @@
+INSERT INTO users (fullname, email, password, picture, phone, address, role, created_at, updated_at, lastlogin_at) VALUES
+('Budi Santoso',    'budi@gmail.com',    'hashed_pw1',  'https://i.pravatar.cc/150?img=1',  '081234567890', 'Jl. Merdeka No.1, Jakarta',          'customer', now(), now(), now()),
+('Siti Rahayu',     'siti@gmail.com',    'hashed_pw2',  'https://i.pravatar.cc/150?img=2',  '081234567891', 'Jl. Sudirman No.2, Bandung',          'customer', now(), now(), now()),
+('Ahmad Fauzi',     'ahmad@gmail.com',   'hashed_pw3',  'https://i.pravatar.cc/150?img=3',  '081234567892', 'Jl. Diponegoro No.3, Surabaya',       'admin',    now(), now(), now()),
+('Dewi Lestari',    'dewi@gmail.com',    'hashed_pw4',  'https://i.pravatar.cc/150?img=4',  '081234567893', 'Jl. Pahlawan No.4, Yogyakarta',       'customer', now(), now(), now()),
+('Eko Prasetyo',    'eko@gmail.com',     'hashed_pw5',  'https://i.pravatar.cc/150?img=5',  '081234567894', 'Jl. Gatot Subroto No.5, Semarang',    'customer', now(), now(), now()),
+('Fitri Handayani', 'fitri@gmail.com',   'hashed_pw6',  'https://i.pravatar.cc/150?img=6',  '081234567895', 'Jl. Ahmad Yani No.6, Medan',          'customer', now(), now(), now()),
+('Gilang Ramadhan', 'gilang@gmail.com',  'hashed_pw7',  'https://i.pravatar.cc/150?img=7',  '081234567896', 'Jl. Imam Bonjol No.7, Makassar',      'admin',    now(), now(), now()),
+('Hani Pertiwi',    'hani@gmail.com',    'hashed_pw8',  'https://i.pravatar.cc/150?img=8',  '081234567897', 'Jl. Pemuda No.8, Palembang',          'customer', now(), now(), now()),
+('Irfan Hakim',     'irfan@gmail.com',   'hashed_pw9',  'https://i.pravatar.cc/150?img=9',  '081234567898', 'Jl. Veteran No.9, Denpasar',          'customer', now(), now(), now()),
+('Juwita Sari',     'juwita@gmail.com',  'hashed_pw10', 'https://i.pravatar.cc/150?img=10', '081234567899', 'Jl. Raya No.10, Balikpapan',          'customer', now(), now(), now());
+
+
 INSERT INTO "products" ("name", "description", "price") VALUES
 ('Espresso', 'Strong and bold espresso made from freshly ground coffee beans with a rich aroma.', 18000),
 ('Americano', 'Smooth espresso diluted with hot water creating a lighter but flavorful coffee.', 20000),
