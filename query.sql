@@ -40,4 +40,28 @@ join (
     union all
     select 10, 5
 ) as c
-on c.id = "products"."id";;
+on c.id = "products"."id";
+
+-- nomor 3
+select
+"products"."id",
+"products"."price",
+c.qty,
+"products"."name"
+from "products"
+join (
+    select 5 as id, 2 as qty
+    union all
+    select 8, 4
+    union all
+    select 10, 5
+) as c
+on c.id = "products"."id";
+
+select
+"id",
+"name",
+"description",
+"price" from products;
+
+select "id", "name","image", "author_title","message","rating" from "testimonials";
