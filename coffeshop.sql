@@ -119,9 +119,11 @@ CREATE TABLE "coupons" (
   "id" serial PRIMARY KEY,
   "title" varchar(255),
   "description" text,
+  "image" text,
   "value" int,
   "created_at" timestamp DEFAULT now()
 );
+
 
 CREATE TABLE "reviews" (
   "id" serial PRIMARY KEY,
