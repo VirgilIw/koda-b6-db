@@ -66,3 +66,41 @@ select
 "price" from products;
 
 select "id", "name","image", "author_title","message","rating" from "testimonials";
+
+-- nomor 4
+
+-- GET ALL PRODUCTS WITH FILTER
+select distinct
+    "p"."id",
+    "p"."name",
+    "p"."description",
+    "p"."price",
+    "c"."categories_name",
+    "p"."is_flash_sale",
+    "p"."is_buy1get1",
+    "p"."is_birthday_package",
+    "i"."image_path"
+from "products" "p"
+left join "product_categories" "pc" on "pc"."product_id" = "p"."id"
+left join "categories" "c" on "c"."id" = "pc"."categories_id"
+left join "product_images" "pi" on "pi"."product_id" = "p"."id"
+left join "images" "i" on "i"."id" = "pi"."image_id"
+where
+    ($1 is null or "p"."name" ilike '%' || $1 || '%')
+    and ($2 is null or "c"."categories_name" = $2)
+    and ($3 is false or "p"."is_flash_sale" = true)
+    and ($4 is false or "p"."is_buy1get1" = true)
+    and ($5 is false or "p"."is_birthday_package" = true)
+    and ($6 is false or "p"."price" = (select min("price") from "products"))
+    and "p"."price" between $7 and $8
+    and "p"."deleted_at" is null
+order by "p"."price";
+
+-- GET ALL COUPONS
+select
+    "id",
+    "title",
+    "description",
+    "value",
+    "image"
+from "coupons";
