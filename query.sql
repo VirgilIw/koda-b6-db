@@ -1,5 +1,5 @@
 -- nama produk,final price, size, variant
-
+-- momor 1
 select
 "products"."name",
 "products"."price" as "base_price",
@@ -24,4 +24,37 @@ group by
 "products"."price"
 order by
 "products"."name"
-limit 1;
+
+  --  SUBTOTAL DARI SETIAP PRODUCT YANG DIPILIH, dan kuantitas
+  -- nomor 2
+select
+"products"."id",
+"products"."price",
+"products"."name",
+(
+    select c."qty"
+    from (
+        values
+        (5,2),
+        (8,4),
+        (10,5)
+    ) as c(id, qty)
+    where c.id = "products"."id"
+) as "qty",
+"products"."price" *
+(
+    select c."qty"
+    from (
+        values
+        (5,2),
+        (8,4),
+        (10,5)
+    ) as c(id, qty)
+    where c.id = "products"."id"
+) as "total_price"
+from "products"
+where "products"."id" in (
+    select id
+    from products
+    where id in (5,8,10)
+);
