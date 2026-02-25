@@ -220,13 +220,13 @@ INSERT INTO product_images (product_id, image_id) VALUES
 (41,41),(42,42),(43,43),(44,44),(45,45),(46,46),(47,47),(48,48),(49,49),(50,50);
 
 INSERT INTO testimonials (name, image, author_title, message, rating, created_at) VALUES
-('Budi Santoso',    'https://i.pravatar.cc/150?img=1',  'Coffee Lover',      'Kopinya enak banget, jadi langganan!',                   5, now()),
-('Siti Rahayu',     'https://i.pravatar.cc/150?img=2',  'Food Blogger',      'Tempatnya nyaman dan minumannya lezat.',                 5, now()),
-('Ahmad Fauzi',     'https://i.pravatar.cc/150?img=3',  'Barista',           'Kualitas biji kopi terbaik yang pernah saya coba.',      4, now()),
-('Dewi Lestari',    'https://i.pravatar.cc/150?img=4',  'Mahasiswa',         'Harga terjangkau dan rasanya mantap!',                   5, now()),
-('Eko Prasetyo',    'https://i.pravatar.cc/150?img=5',  'Pekerja Kantoran',  'Jadi tempat favorit saya setiap pagi.',                  4, now()),
-('Fitri Handayani', 'https://i.pravatar.cc/150?img=6',  'Ibu Rumah Tangga',  'Tiramisu dan croissantnya enak banget, pasti order lagi!', 5, now()),
-('Gilang Ramadhan', 'https://i.pravatar.cc/150?img=7',  'Fotografer',        'Presentasi minumannya sangat instagramable.',            4, now()),
-('Hani Pertiwi',    'https://i.pravatar.cc/150?img=8',  'Designer',          'Suasananya cozy banget buat kerja sambil ngopi.',        5, now()),
-('Irfan Hakim',     'https://i.pravatar.cc/150?img=9',  'Guru',              'Pelayanannya ramah dan cepat.',                          4, now()),
-('Juwita Sari',     'https://i.pravatar.cc/150?img=10', 'Dokter',            'Matcha lattenya adalah yang terbaik!',                   5, now());
+('Budi Santoso',    'https://i.pravatar.cc/150?img=1',  'Coffee Lover',     'The Espresso is so bold and rich, perfect for coffee lovers!',       5, now()),
+('Siti Rahayu',     'https://i.pravatar.cc/150?img=2',  'Food Blogger',     'Caramel Latte is absolutely delicious, the sweetness is just right!', 5, now()),
+('Ahmad Fauzi',     'https://i.pravatar.cc/150?img=3',  'Barista',          'One of the best Cold Brew I have ever tried, so smooth!',            4, now()),
+('Dewi Lestari',    'https://i.pravatar.cc/150?img=4',  'Mahasiswa',        'Beef Burger and French Fries are a must try, very filling!',          5, now()),
+('Eko Prasetyo',    'https://i.pravatar.cc/150?img=5',  'Office Worker',    'Matcha Latte and Tiramisu is my favorite combo, highly recommended!', 4, now()),
+('Fitri Handayani', 'https://i.pravatar.cc/150?img=6',  'Housewife',        'The Butter Croissant is so flaky and soft, pairs great with Latte!',  5, now()),
+('Gilang Ramadhan', 'https://i.pravatar.cc/150?img=7',  'Photographer',     'Mocha Frappe is creamy and not too sweet, absolutely love it!',       4, now()),
+('Hani Pertiwi',    'https://i.pravatar.cc/150?img=8',  'Designer',         'Strawberry Smoothie and Red Velvet Cake are incredibly good!',        5, now()),
+('Irfan Hakim',     'https://i.pravatar.cc/150?img=9',  'Teacher',          'The Carbonara Pasta is so creamy and savory, one of my favorites!',   4, now()),
+('Juwita Sari',     'https://i.pravatar.cc/150?img=10', 'Doctor',           'Avocado Smoothie and Cheese Cake are always my go-to choices!',       5, now());
