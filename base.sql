@@ -26,6 +26,9 @@ CREATE TABLE "products" (
   "name" varchar(255) unique,
   "description" text,
   "price" int,
+  "is_flash_sale" boolean default false,
+  "is_buy1get1" boolean default false,
+  "is_birthday_package" boolean default false,
   "created_at" timestamp DEFAULT now(),
   "updated_at" timestamp,
   "deleted_at" timestamp
