@@ -33,14 +33,15 @@ select
     "c"."qty",
     "p"."name",
     "p"."price" * "c"."qty" as "subtotal"
-from "products" as "p"
-join (
+from "products" as "p",
+(
     select 5 as "id", 2 as "qty"
     union all
-    select 8, 4
+    select 8 as "id", 4 as "qty"
     union all
-    select 10, 5
-) as "c" on "c"."id" = "p"."id";
+    select 10 as "id", 5 as "qty"
+) as "c"
+where "c"."id" = "p"."id";
 
 -- nomor 3
 select
