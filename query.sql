@@ -51,7 +51,7 @@ select
         (10,5)
     ) as c(id, qty)
     where c.id = "products"."id"
-) as "total_price"
+) as "subtotal"
 from "products"
 where "products"."id" in (
     select id
