@@ -2,10 +2,14 @@
 
 select
 "products"."name",
-"products"."price",
-string_agg(distinct "sizes"."size_name", ',') as "size",
-string_agg(distinct "variants"."variant_name", ',') as "variant",
-"products"."price" + sum(distinct "variants"."additional_price") as "final_price"
+"products"."price" as "base_price",
+string_agg(distinct "sizes"."size_name", ', ') as "sizes",
+string_agg(distinct "variants"."variant_name", ', ') as "variants",
+coalesce(sum(distinct "sizes"."additional_price"),0) as "total_size_price",
+coalesce(sum(distinct "variants"."additional_price"),0) as "total_variant_price",
+"products"."price"
++ coalesce(sum(distinct "sizes"."additional_price"),0)
++ coalesce(sum(distinct "variants"."additional_price"),0) as "final_price"
 from "products"
 join "product_sizes"
 on "product_sizes"."product_id" = "products"."id"
@@ -18,4 +22,6 @@ on "variants"."id" = "product_variants"."variant_id"
 group by
 "products"."name",
 "products"."price"
+order by
+"products"."name"
 limit 1;
