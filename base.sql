@@ -46,6 +46,22 @@ CREATE TABLE "sizes" (
   "updated_at" timestamp,
   "deleted_at" timestamp
 );
+SELECT * from sizes
+
+ALTER TABLE "sizes"
+ADD COLUMN "additional_price" int DEFAULT 0;
+
+UPDATE "sizes"
+SET "additional_price" = 0
+WHERE "size_name" = 'Regular';
+
+UPDATE "sizes"
+SET "additional_price" = 3000
+WHERE "size_name" = 'Medium';
+
+UPDATE "sizes"
+SET "additional_price" = 5000
+WHERE "size_name" = 'Large';
 
 CREATE TABLE "product_sizes" (
   "id" serial PRIMARY KEY,
